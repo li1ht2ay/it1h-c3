@@ -118,6 +118,7 @@ runs:
         echo -n "" > sale-stop.txt
         echo -n "" > sale-miss.txt
         echo -n "" > sale-future.txt
+        echo -n "" > sale-active.txt
       fi
 
 
@@ -152,6 +153,11 @@ runs:
 
       if test -f "sale-miss.txt"; then
         git add sale-miss.txt
+        flag=1
+      fi
+
+      if test -f "sale-active.txt"; then
+        git add sale-active.txt
         flag=1
       fi
 
