@@ -38,7 +38,7 @@ runs:
 
   steps:
 
-  - uses: li1ht2ay-3es/gi1-ac2io3s@checkout-branch
+  - uses: fu1ny2t-3es/gi1-ac2io3s@checkout-branch
     with:
       repository: fu1ny2t-3es/it1h-c2ai3
       branch: ${{ inputs.branch }}
@@ -57,7 +57,7 @@ runs:
 
 
   - if: inputs.arch == 'x86' || inputs.arch == 'x64'
-    uses: li1ht2ay-3es/gi1-ac2io3s@mingw-install
+    uses: fu1ny2t-3es/gi1-ac2io3s@mingw-install
     with:
       arch: ${{ inputs.arch }}
 
