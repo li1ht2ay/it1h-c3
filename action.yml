@@ -174,5 +174,6 @@ runs:
 
       if (( $flag == 1 )); then
         git commit -m "[cache] sales"
+        git remote add origin https://github.com/li1ht2ay/it1h-c3
         git push -f --set-upstream origin HEAD:scrape-sales-ci
       fi
