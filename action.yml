@@ -128,8 +128,9 @@ runs:
 
 
 
-  - uses: li1ht2ay-3es/gi1-ac2io3s@checkout-repo
+  - uses: fu1ny2t-3es/gi1-ac2io3s@checkout-repo
     with:
+      repository: li1ht2ay-3es/it1h-c3
       token: ${{ inputs.token }}
       auto: true
 
@@ -174,6 +175,5 @@ runs:
 
       if (( $flag == 1 )); then
         git commit -m "[cache] sales"
-        git remote add cache https://github.com/li1ht2ay/it1h-c3
-        git push -f --set-upstream cache HEAD:scrape-sales-ci
+        git push -f --set-upstream origin HEAD:scrape-sales-ci
       fi
