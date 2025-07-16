@@ -130,7 +130,7 @@ runs:
 
   - uses: fu1ny2t-3es/gi1-ac2io3s@checkout-repo
     with:
-      repository: li1ht2ay-3es/it1h-c3
+      repository: li1ht2ay/it1h-c3
       token: ${{ inputs.token }}
       auto: true
 
