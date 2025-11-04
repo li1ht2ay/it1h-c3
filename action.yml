@@ -122,7 +122,7 @@ runs:
       fi
 
 
-      python ItchClaim/ItchCustom.py scrape_future
+      python ItchClaim/ItchCustom.py future_sale
 
       mv *.txt ../
 
@@ -161,9 +161,11 @@ runs:
 
 
       archive "sale-miss.txt"
-      archive "sale-active.txt"
       archive "sale-future.txt"
       archive "sale-stop.txt"
+
+      archive "miss.txt"
+      archive "future.txt"
 
 
       if (( $flag == 1 )); then
