@@ -122,7 +122,7 @@ runs:
       fi
 
 
-      itchclaim ItchClaim/ItchCustom.py scrape_future
+      python ItchClaim/ItchCustom.py scrape_future
 
       mv *.txt ../
 
