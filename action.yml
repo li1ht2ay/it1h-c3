@@ -122,7 +122,7 @@ runs:
       fi
 
 
-      itchclaim --login ${{ inputs.name }} --password ${{ inputs.password }} --totp ${{ inputs.totp }} scrape_sales
+      itchclaim ItchClaim/ItchCustom.py scrape_future
 
       mv *.txt ../
 
@@ -152,25 +152,18 @@ runs:
     run: |
       flag=0
 
-      if test -f "sale-miss.txt"; then
-        git add sale-miss.txt
-        flag=1
-      fi
+      archive() {
+        if test -f $1; then
+          git add $1
+          flag=1
+        fi
+      }
 
-      if test -f "sale-active.txt"; then
-        git add sale-active.txt
-        flag=1
-      fi
 
-      if test -f "sale-future.txt"; then
-        git add sale-future.txt
-        flag=1
-      fi
-
-      if test -f "sale-stop.txt"; then
-        git add sale-stop.txt
-        flag=1
-      fi
+      archive "sale-miss.txt"
+      archive "sale-active.txt"
+      archive "sale-future.txt"
+      archive "sale-stop.txt"
 
 
       if (( $flag == 1 )); then
