@@ -106,13 +106,13 @@ runs:
 
 
   - if: inputs.arch == 'so64'
-    working-directory: ${{ github.workspace }}/ItchClaim
+    working-directory: ${{ github.workspace }}
     env:
       CC: ccache gcc
       CXX: ccache g++
     shell: bash
     run: |
-      if curl -L --fail 'https://github.com/${{ github.repository_owner }}/it1h-0/raw/refs/heads/scrape-rewards-ci/owned-list.txt'; then
+      if curl -L -o owned-list.txt --fail 'https://github.com/${{ github.repository_owner }}/it1h-0/raw/refs/heads/scrape-rewards-ci/owned-list.txt'; then
         ls -a
       else
         echo -n "" > owned-list.txt
@@ -130,9 +130,9 @@ runs:
       fi
 
 
-      python ItchCustom.py future_sale
+      python ItchClaim/ItchCustom.py future_sale
 
-      mv *.txt ../../
+      mv *.txt ../
 
 
 
@@ -150,7 +150,7 @@ runs:
     run: |
       git checkout --orphan cache-temp-report
       git reset --hard
-      mv ../../*.txt ./
+      mv ../*.txt ./
 
 
 
