@@ -127,7 +127,6 @@ runs:
         echo -n "" > sale-stop.txt
         echo -n "" > sale-miss.txt
         echo -n "" > sale-future.txt
-        echo -n "" > sale-active.txt
       fi
 
 
