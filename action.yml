@@ -103,7 +103,10 @@ runs:
       # ls -R
       # pip install ./dist/*.gz
       pip install pycron
-
+      pip install fire
+      pip install requests
+      pip install bs4
+      pip install pyotp
 
 
   - if: inputs.arch == 'so64'
