@@ -113,12 +113,10 @@ runs:
     shell: bash
     run: |
       if curl -L -o owned-list.txt --fail 'https://github.com/${{ github.repository_owner }}/it1h-0/raw/refs/heads/scrape-rewards-ci/owned-list.txt'; then
-        ls -a
+        echo -n ""
       else
         echo -n "" > owned-list.txt
       fi
-
-      echo "123"
 
       
       if curl -L -o scrape.zip --fail 'https://github.com/${{ github.repository_owner }}/it1h-c3/archive/refs/heads/scrape-sales-ci.zip'; then
@@ -174,6 +172,7 @@ runs:
 
       archive "miss.txt"
       archive "future.txt"
+      archive "claim.txt"
 
 
       if (( $flag == 1 )); then
