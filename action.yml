@@ -113,7 +113,7 @@ runs:
     shell: bash
     run: |
       if curl -L --fail 'https://github.com/${{ github.repository_owner }}/it1h-0/raw/refs/heads/scrape-rewards-ci/owned-list.txt'; then
-        echo owned-list.txt
+        echo -n ""
       else
         echo -n "" > owned-list.txt
       fi
