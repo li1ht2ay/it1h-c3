@@ -99,9 +99,9 @@ runs:
       CXX: ccache g++
     shell: bash
     run: |
-      python -m build
-      ls -R
-      pip install ./dist/*.gz
+      # python -m build
+      # ls -R
+      # pip install ./dist/*.gz
 
 
 
@@ -123,8 +123,6 @@ runs:
         unzip -o -j scrape.zip
       else
         echo -n "" > sale-stop.txt
-        echo -n "" > sale-miss.txt
-        echo -n "" > sale-future.txt
       fi
 
 
@@ -166,13 +164,9 @@ runs:
       }
 
 
-      archive "sale-miss.txt"
-      archive "sale-future.txt"
+      archive "sale.txt"
+      archive "sale-log.txt"
       archive "sale-stop.txt"
-
-      archive "miss.txt"
-      archive "future.txt"
-      archive "claim.txt"
 
 
       if (( $flag == 1 )); then
