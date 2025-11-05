@@ -106,7 +106,7 @@ runs:
 
 
   - if: inputs.arch == 'so64'
-    working-directory: ${{ github.workspace }}
+    working-directory: ${{ github.workspace }}/ItchClaim
     env:
       CC: ccache gcc
       CXX: ccache g++
@@ -130,9 +130,9 @@ runs:
       fi
 
 
-      python ItchClaim/ItchCustom.py future_sale
+      python ItchCustom.py future_sale
 
-      mv *.txt ../
+      mv *.txt ../../
 
 
 
@@ -150,7 +150,7 @@ runs:
     run: |
       git checkout --orphan cache-temp-report
       git reset --hard
-      mv ../*.txt ./
+      mv ../../*.txt ./
 
 
 
