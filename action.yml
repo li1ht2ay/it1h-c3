@@ -173,6 +173,8 @@ runs:
       archive "sale-log.txt"
       archive "sale-stop.txt"
 
+      archive "miss.txt"
+
 
       if (( $flag == 1 )); then
         git commit -m "[cache] sales"
